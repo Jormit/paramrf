@@ -1,0 +1,40 @@
+﻿
+
+
+**evaluators** (pmrf.evaluators)
+================================
+
+.. automodule:: pmrf.evaluators
+   :no-members:
+   :no-inherited-members:
+
+
+
+
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+   :toctree:
+   :template: autosummary/class.rst
+
+
+   AbstractEvaluator
+
+   Feature
+
+   TargetLoss
+
+   MarginalLogLikelihood
+
+   GibbsMarginalLogLikelihood
+
+   Goal
+
+
+
+
+
+

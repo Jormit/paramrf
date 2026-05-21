@@ -1,0 +1,213 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Differentiation &mdash; paramrf 0.22.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7b27aacc" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2fe71c6"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
+    <link rel="prev" title="Parameter and Model Manipulation" href="parameter_and_model_manipulation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            paramrf
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core_concepts/index.html">Core Concepts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cascading_and_terminating.html">Cascading and Terminating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circuit_models.html">Circuit Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_optimization.html">Model Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_parametric_models.html">Custom Parametric Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_composite_models.html">Custom Composite Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameter_and_model_manipulation.html">Parameter and Model Manipulation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Automatic Differentiation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#computing-parameter-sensitivities">Computing Parameter Sensitivities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#broadcasting-sensitivities-across-a-band">Broadcasting Sensitivities Across a Band</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../skrf_comparison.html">scikit-rf Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">paramrf</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Examples</a></li>
+      <li class="breadcrumb-item active">Automatic Differentiation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/examples/auto_differentiation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="automatic-differentiation">
+<h1>Automatic Differentiation<a class="headerlink" href="#automatic-differentiation" title="Link to this heading"></a></h1>
+<p>ParamRF is built on JAX and Equinox, making models natively differentiable. This allows for analytical gradients of circuit responses with respect to component values, avoiding the need for numerical approximations. These gradients can be interpreted, for example, as the sensitivities of a given response to specific components. In this example, we compute these sensitivities for a CLC low-pass filter across frequency.</p>
+<section id="computing-parameter-sensitivities">
+<h2>Computing Parameter Sensitivities<a class="headerlink" href="#computing-parameter-sensitivities" title="Link to this heading"></a></h2>
+<p>First, let’s set up a low-pass filter model which we want to take derivatives with respect to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pmrf.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ShuntCapacitor</span><span class="p">,</span> <span class="n">Inductor</span><span class="p">,</span> <span class="n">Cascade</span>
+
+<span class="n">c1</span> <span class="o">=</span> <span class="n">ShuntCapacitor</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1.0e-12</span><span class="p">)</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="n">Inductor</span><span class="p">(</span><span class="n">L</span><span class="o">=</span><span class="mf">1.0e-9</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">ShuntCapacitor</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1.0e-12</span><span class="p">)</span>
+
+<span class="n">lpf</span> <span class="o">=</span> <span class="n">Cascade</span><span class="p">([</span><span class="n">c1</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">c2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>To differentiate a model’s parameters, we must define a pure function that returns a scalar metric (e.g., insertion loss). We use <code class="xref py py-func docutils literal notranslate"><span class="pre">equinox.filter_grad()</span></code> to compute derivatives for the parameters within the model tree:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pmrf</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">prf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">equinox</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">eqx</span>
+
+<span class="n">freq</span> <span class="o">=</span> <span class="n">prf</span><span class="o">.</span><span class="n">Frequency</span><span class="p">(</span><span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;GHz&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">s21_mag</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">s_mag</span><span class="p">(</span><span class="n">freq</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">grad_fn</span> <span class="o">=</span> <span class="n">eqx</span><span class="o">.</span><span class="n">filter_grad</span><span class="p">(</span><span class="n">s21_mag</span><span class="p">)</span>
+<span class="n">sensitivities</span> <span class="o">=</span> <span class="n">grad_fn</span><span class="p">(</span><span class="n">prf</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">lpf</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sensitivity to C1: </span><span class="si">{</span><span class="n">sensitivities</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">C</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1e-12</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> / pF&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sensitivity to L: </span><span class="si">{</span><span class="n">sensitivities</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">L</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1e-9</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> / nH&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Sensitivity to C1: -0.106 / pF
+Sensitivity to L: 0.086 / nH
+</pre></div>
+</div>
+<p>Note that we had to manually “unwrap” our model before taking gradients in this manner. This is because all parameters in ParamRF are wrappers around raw JAX arrays, and we want to take derivatives with respect to their physical parameter values, and not the raw, underlying optimizer values. (For other tasks in ParamRF, like optimization and inference, this is often done automatically).</p>
+</section>
+<section id="broadcasting-sensitivities-across-a-band">
+<h2>Broadcasting Sensitivities Across a Band<a class="headerlink" href="#broadcasting-sensitivities-across-a-band" title="Link to this heading"></a></h2>
+<p>To evaluate sensitivity across a frequency band, JAX’s reverse-mode Jacobian function <code class="xref py py-func docutils literal notranslate"><span class="pre">jax.jacrev()</span></code> can be used, which computes the derivative of an S-parameter array with respect to specific inputs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">jax</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">band</span> <span class="o">=</span> <span class="n">prf</span><span class="o">.</span><span class="n">Frequency</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="s1">&#39;GHz&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">s21_mag_array</span><span class="p">(</span><span class="n">c1_val</span><span class="p">,</span> <span class="n">l_val</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">ShuntCapacitor</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="n">c1_val</span><span class="p">)</span> <span class="o">**</span> <span class="n">Inductor</span><span class="p">(</span><span class="n">L</span><span class="o">=</span><span class="n">l_val</span><span class="p">)</span> <span class="o">**</span> <span class="n">ShuntCapacitor</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1.0e-12</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">s_mag</span><span class="p">(</span><span class="n">band</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">jacobian_fn</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">jacrev</span><span class="p">(</span><span class="n">s21_mag_array</span><span class="p">,</span> <span class="n">argnums</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">c_nom</span><span class="p">,</span> <span class="n">l_nom</span> <span class="o">=</span> <span class="mf">1.0e-12</span><span class="p">,</span> <span class="mf">1.0e-9</span>
+<span class="n">ds21_dc</span><span class="p">,</span> <span class="n">ds21_dl</span> <span class="o">=</span> <span class="n">jacobian_fn</span><span class="p">(</span><span class="n">c_nom</span><span class="p">,</span> <span class="n">l_nom</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can plot the results as a function of frequency to visualize their behaviour:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">band</span><span class="o">.</span><span class="n">f_scaled</span><span class="p">,</span> <span class="n">ds21_dc</span> <span class="o">*</span> <span class="mf">1e-12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;C1 Sensitivity / pF&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (GHz)&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\partial |S_</span><span class="si">{21}</span><span class="s1">| / \partial C$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">band</span><span class="o">.</span><span class="n">f_scaled</span><span class="p">,</span> <span class="n">ds21_dl</span> <span class="o">*</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;L Sensitivity / nH&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\partial |S_</span><span class="si">{21}</span><span class="s1">| / \partial L$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sensitivity of $S_</span><span class="si">{21}</span><span class="s1">$ Magnitude&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../_images/auto_differentiation-4.png" class="plot-directive" src="../_images/auto_differentiation-4.png" />
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="parameter_and_model_manipulation.html" class="btn btn-neutral float-left" title="Parameter and Model Manipulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

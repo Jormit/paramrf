@@ -1,0 +1,9 @@
+
+
+
+extract_name
+============
+
+.. currentmodule:: pmrf.parameters
+
+.. autofunction:: extract_name

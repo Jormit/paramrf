@@ -1,0 +1,44 @@
+﻿
+
+
+**parameters** (pmrf.parameters)
+================================
+
+.. automodule:: pmrf.parameters
+   :no-members:
+   :no-inherited-members:
+
+
+
+
+
+
+
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+   :toctree:
+   :template: autosummary/function.rst
+
+
+   as_param
+
+   Value
+
+   Fixed
+
+   Bounded
+
+   Constrained
+
+   Random
+
+   param
+
+   extract_name
+
+

@@ -1,0 +1,9 @@
+
+
+
+Open
+====
+
+.. currentmodule:: pmrf.models.components.lumped
+
+.. autofunction:: Open

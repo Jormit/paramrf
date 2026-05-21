@@ -1,0 +1,207 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BoxCLCC &mdash; paramrf 0.22.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7b27aacc" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2fe71c6"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/thebelab-helper.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LSectionLC" href="pmrf.models.components.topological.LSectionLC.html" />
+    <link rel="prev" title="topological" href="pmrf.models.components.topological.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            paramrf
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core_concepts/index.html">Core Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../skrf_comparison.html">scikit-rf Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">paramrf</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API</a></li>
+          <li class="breadcrumb-item"><a href="pmrf.models.html"><strong>models</strong> (pmrf.models)</a></li>
+          <li class="breadcrumb-item"><a href="pmrf.models.components.html">components</a></li>
+          <li class="breadcrumb-item"><a href="pmrf.models.components.topological.html">topological</a></li>
+      <li class="breadcrumb-item active">BoxCLCC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/generated/pmrf.models.components.topological.BoxCLCC.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="boxclcc">
+<h1>BoxCLCC<a class="headerlink" href="#boxclcc" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pmrf.models.components.topological.BoxCLCC">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pmrf.models.components.topological.</span></span><span class="sig-name descname"><span class="pre">BoxCLCC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">C1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">complex</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span> <span class="pre">+</span> <span class="pre">0j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pmrf.models.components.topological.BoxCLCC" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="pmrf.Model.html#pmrf.Model" title="pmrf.models.base.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p>A 4-port model of a Box-network with a Capacitor-Inductor-Capacitor-Capacitor topology.</p>
+<p>This model consists of a shunt capacitor (<cite>C1</cite>), a series inductor (<cite>L</cite>),
+and a second shunt capacitor (<cite>C2</cite>), and a bridging capacitor (<cite>C3</cite>).</p>
+<p>The parameter <cite>four_port</cite> determines whether all four ports are exposed or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>C1</strong> (<a class="reference internal" href="pmrf.Param.html#pmrf.Param" title="pmrf.Param"><em>Param</em></a>) – First shunt capacitor.</p></li>
+<li><p><strong>L</strong> (<a class="reference internal" href="pmrf.Param.html#pmrf.Param" title="pmrf.Param"><em>Param</em></a>) – Series inductor.</p></li>
+<li><p><strong>C2</strong> (<a class="reference internal" href="pmrf.Param.html#pmrf.Param" title="pmrf.Param"><em>Param</em></a>) – Second shunt capacitor.</p></li>
+<li><p><strong>C3</strong> (<a class="reference internal" href="pmrf.Param.html#pmrf.Param" title="pmrf.Param"><em>Param</em></a>) – Bridging capacitor.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pmrf.models.components.topological.BoxCLCC.y_general">
+<span class="sig-name descname"><span class="pre">y_general</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pmrf.Frequency.html#pmrf.Frequency" title="pmrf.frequency.Frequency"><span class="pre">Frequency</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Array</span></span></span><a class="headerlink" href="#pmrf.models.components.topological.BoxCLCC.y_general" title="Link to this definition"></a></dt>
+<dd><p>Internal calculation for the general case (L &gt; 1e-18).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>freq</strong> (<a class="reference internal" href="pmrf.Frequency.html#pmrf.Frequency" title="pmrf.Frequency"><em>Frequency</em></a>) – The frequency points.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Y matrix.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>jnp.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pmrf.models.components.topological.BoxCLCC.y_zero_inductance">
+<span class="sig-name descname"><span class="pre">y_zero_inductance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pmrf.Frequency.html#pmrf.Frequency" title="pmrf.frequency.Frequency"><span class="pre">Frequency</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Array</span></span></span><a class="headerlink" href="#pmrf.models.components.topological.BoxCLCC.y_zero_inductance" title="Link to this definition"></a></dt>
+<dd><p>Internal calculation for the zero inductance case.</p>
+<p>Uses a small epsilon for L to avoid division by zero while approximating
+the behavior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>freq</strong> (<a class="reference internal" href="pmrf.Frequency.html#pmrf.Frequency" title="pmrf.Frequency"><em>Frequency</em></a>) – The frequency points.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Y matrix.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>jnp.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pmrf.models.components.topological.BoxCLCC.C1">
+<span class="sig-name descname"><span class="pre">C1</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AbstractVariable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Inexact</span><span class="p"><span class="pre">[</span></span><span class="pre">jaxlib._jax.Array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'...'</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#pmrf.models.components.topological.BoxCLCC.C1" title="Link to this definition"></a></dt>
+<dd><p>First shunt capacitor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pmrf.models.components.topological.BoxCLCC.C2">
+<span class="sig-name descname"><span class="pre">C2</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AbstractVariable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Inexact</span><span class="p"><span class="pre">[</span></span><span class="pre">jaxlib._jax.Array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'...'</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#pmrf.models.components.topological.BoxCLCC.C2" title="Link to this definition"></a></dt>
+<dd><p>Second shunt capacitor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pmrf.models.components.topological.BoxCLCC.C3">
+<span class="sig-name descname"><span class="pre">C3</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AbstractVariable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Inexact</span><span class="p"><span class="pre">[</span></span><span class="pre">jaxlib._jax.Array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'...'</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#pmrf.models.components.topological.BoxCLCC.C3" title="Link to this definition"></a></dt>
+<dd><p>Bridging capacitor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pmrf.models.components.topological.BoxCLCC.L">
+<span class="sig-name descname"><span class="pre">L</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AbstractVariable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Inexact</span><span class="p"><span class="pre">[</span></span><span class="pre">jaxlib._jax.Array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'...'</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#pmrf.models.components.topological.BoxCLCC.L" title="Link to this definition"></a></dt>
+<dd><p>Series inductor.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pmrf.models.components.topological.html" class="btn btn-neutral float-left" title="topological" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pmrf.models.components.topological.LSectionLC.html" class="btn btn-neutral float-right" title="LSectionLC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

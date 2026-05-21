@@ -1,0 +1,9 @@
+﻿
+
+
+**Value** (pmrf.Value)
+======================
+
+.. currentmodule:: pmrf
+
+.. autofunction:: Value
